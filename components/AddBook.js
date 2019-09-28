@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Modal, View, TextInput, Text, Button, StyleSheet } from 'react-native';
-import BarcodeScanner from 'react-native-barcode-scanner-google';
+import { RNCamera } from 'react-native-camera';
 
 const AddBook = (props) => {
 
@@ -13,7 +13,7 @@ const AddBook = (props) => {
     return (
         <Modal style={styles.modal} visible={props.visible}>
             <Button title="Cancel" onPress={() => props.setVisible(false)} />
-            <BarcodeScanner style={{ flex: 1 }} onBarcodeRead={barcodeRead} />
+            <RNCamera style={{ flex: 1 }} onBarCodeRead={barcodeRead} />
         </Modal>
     );
 

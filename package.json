@@ -10,7 +10,7 @@
   "dependencies": {
     "react": "16.8.6",
     "react-native": "0.60.4",
-    "react-native-barcode-scanner-google": "^1.4.2"
+    "react-native-camera": "^3.6.0"
   },
   "devDependencies": {
     "@babel/core": "7.5.5",
