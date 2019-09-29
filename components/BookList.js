@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Button, FlatList, StyleSheet } from 'react-native';
+import { View, Text, Button, ScrollView, StyleSheet } from 'react-native';
 
 import AddBook from './AddBook';
 import Book from './Book';
@@ -30,13 +30,13 @@ const BookList = (props) => {
         <View style={styles.view}>
             <Button title="Add Book" onPress={() => setAddBookVisible(true)} />
             <AddBook visible={addBookVisible} setVisible={setAddBookVisible} addBook={addBook} />
-            <View>
-                {bookList.map(book => {
-                    return (
-                        <Book book={book} />
-                    );
-                })}
-            </View>
+            <ScrollView>
+                {
+                    bookList.map((book) => {
+                        return (<Book book={book} />);
+                    })
+                }
+            </ScrollView>
         </View>
     );
 

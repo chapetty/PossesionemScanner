@@ -15,6 +15,10 @@ const Book = (props) => {
                 props.book.publisher = responseJSON.items[0].volumeInfo.publisher;
                 props.book.publishedDate = responseJSON.items[0].volumeInfo.publishedDate;
                 setLoading(false);
+            })
+            .catch(error => {
+                props.book.title = 'Error';
+                setLoading(false);
             });
     };
 
@@ -48,10 +52,6 @@ const styles = StyleSheet.create({
         paddingTop: 5,
         borderBottomWidth: 1,
         borderBottomColor: 'grey',
-        shadowColor: 'red',
-        shadowOffset: { width: 2, height: 2 },
-        shadowOpacity: 100,
-        shadowRadius: 2,
     }
 });
 
